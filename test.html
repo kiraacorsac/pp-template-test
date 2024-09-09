@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container_row {
+          display: flex;
+        }
+
+        .layer1,
+        .layer2 {
+            width: 100%;
+        }
+
+        .layer1 {
+        }
+
+        .layer2 {
+            margin-left: -100%;
+            mix-blend-mode: overlay;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container_row">
+        <div class="layer1">
+            <img src="https://i.imgur.com/m5rzcDQ.png"/>
+        </div>
+        <div class="layer2">
+            <img src="https://i.imgur.com/OvSiOaw.png"/>
+        </div>
+    </div>
+</body>
+
+</html>

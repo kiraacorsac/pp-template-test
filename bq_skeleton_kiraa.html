@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        :root {
+            --bq_border_radius: 20px;
+        }
+
+        h1,
+        h2 {
+            font-weight: normal;
+            font-style: normal;
+            text-align: center;
+            margin-top: 3em;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+        }
+
+        h1 {
+            font-size: 42pt;
+        }
+
+        h2 {
+            font-size: 38pt;
+        }
+
+        h3 {
+            text-align: unset;
+            margin-top: 0px;
+            font-weight: bold;
+            font-size: 15pt;
+            overflow: hidden;
+            font-size: 20pt;
+            margin-bottom: 1em;
+        }
+
+        section {
+            margin: 4em 0em;
+        }
+
+        .subtext {
+            text-align: center;
+            font-size: 30pt;
+        }
+
+        .body {
+            margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 0.5pt;
+        }
+
+        .intro_img {
+            position: relative;
+            background-color: rgb(128, 128, 128);
+            width: 100%;
+            border-radius: var(--bq_border_radius);
+        }
+
+        .list_container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .bq_list {
+            list-style-type: "- ";
+        }
+
+        .bq_list li {
+            margin: 0.5em 0px;
+        }
+
+        /* Bottom left text */
+        .bottom-left-intro-text {
+            vertical-align: bottom;
+            font-size: 106pt;
+            font-weight: bold;
+            margin-top: calc(-4*106pt);
+            padding-left: 30px;
+            padding-right: 30px;
+            position: absolute;
+            margin-bottom: 55px;
+            color: #ffffff;
+            z-index: 1;
+        }
+
+        .heading3 {
+            font-weight: bold;
+            font-size: 15pt;
+            overflow: hidden;
+            font-size: 20pt;
+            color: white;
+            margin-bottom: 1em;
+        }
+
+        .block_container {
+            overflow: hidden;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .block_content {
+            margin-block-start: 2em;
+            margin-block-end: 2em;
+            font-size: 16pt;
+            padding: 0px 1em;
+        }
+
+        .why {
+            color: rgb(211, 211, 211);
+            border-radius: var(--bq_border_radius);
+            margin-bottom: 15px;
+            display: flex;
+            width: auto;
+            min-height: 250px;
+            overflow: hidden;
+        }
+
+        .why_row {
+            display: flex;
+            column-gap: 16px;
+        }
+
+        .why_column {
+            width: 50%;
+            position: relative;
+        }
+
+        .why_intro {
+            text-align: center;
+            font-size: 24pt;
+            margin: 2em 4em;
+        }
+
+        .why_intro_pre {
+            font-weight: bold;
+        }
+
+        .why_image {
+            position: relative;
+            max-width: 100%;
+        }
+
+        .why_block_content {
+            position: absolute;
+            margin-block-start: 2em;
+            margin-block-end: 2em;
+            font-size: 16pt;
+            padding: 0px 1em;
+            /* TODO: Unneeded hack */
+            z-index: 1;
+        }
+
+        .black_gradient {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(22, 22, 22, 0.5) 51%);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .features {
+            color: rgb(199, 199, 199);
+            border-radius: var(--bq_border_radius);
+            overflow: hidden;
+            margin-bottom: 15px;
+            background-color: #1f1f1f;
+            display: flex;
+        }
+
+        .features_img {
+            border-radius: var(--bq_border_radius);
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .features_img>img {
+            max-width: 400px;
+        }
+
+        .features-img-left {
+            /* 1990s called they want their css back */
+            float: left;
+        }
+
+        .categories {
+            color: rgb(199, 199, 199);
+            border-radius: var(--bq_border_radius);
+            overflow: hidden;
+            margin-bottom: 15px;
+            background-color: #1f1f1f;
+
+        }
+
+        .category_content {
+            width: 100%;
+            padding: 2em 4em;
+        }
+
+        .category_content h3 {
+            text-align: center;
+        }
+
+        .categories_img {
+            border-radius: var(--bq_border_radius);
+            background-color: #ffe4c4;
+            float: right;
+            max-width: 400px;
+        }
+
+        .seasons_img {
+            position: relative;
+            width: 100%;
+
+        }
+
+        .image {
+            position: relative;
+            width: 100%;
+            border-radius: var(--bq_border_radius);
+        }
+
+        .bold {
+            font-weight: 700;
+        }
+
+        .bq_logo_backdrop {
+            width: 90%;
+            left: 5%;
+            top: 0;
+            margin-top: 110%;
+            position: absolute;
+            display: flex;
+        }
+
+        .positioned_element {
+            position: relative;
+
+        }
+
+        .license_img {
+            position: relative;
+            width: 100%;
+            border-radius: var(--bq_border_radius);
+        }
+
+        .documentation-link {
+            border-radius: var(--bq_border_radius);
+            background: linear-gradient(0deg, #0e633d 0%, #19bd58 100%);
+            font-size: 2em;
+            font-weight: 600;
+            color: #ffffff;
+            padding: 3%;
+            justify-content: center;
+            display: flex;
+            margin-top: 50px;
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .thank-you-text {
+            text-align: center;
+            font-size: 16pt;
+            margin: 0 4em;
+
+        }
+
+        /* TODO: What is the font? */
+        .licenses {
+            display: flex;
+            column-gap: 1em;
+            overflow: hidden;
+        }
+
+        .above-license {
+            max-width: 100%;
+        }
+
+        .license_column {
+            width: 100%;
+            overflow: hidden;
+
+        }
+
+        .license_text {
+            padding: 24px;
+            background-color: #e6e6e6;
+            border-radius: var(--bq_border_radius);
+
+        }
+
+        .license_heading {
+            font-weight: bold;
+            font-size: 40px;
+            padding: 0px;
+        }
+
+        .license_subheading {
+            font-size: 30px;
+        }
+
+        .license_count {
+            font-size: 1em;
+        }
+
+        .license_price {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .license_table {
+            font-size: 1em;
+            margin: 1em 0px;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .license_studio_features {
+            list-style: none;
+            margin: 1em 0px;
+            padding: 0;
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        .other-products {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .other-product {
+            margin: 0.5%;
+            background: #eee;
+            border-radius: 10px;
+            padding: 7.5px 5px;
+            padding-bottom: 3px;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+            width: 104px;
+        }
+
+        .selected-product .product-name {
+            font-weight: bolder;
+        }
+
+        .product-logo {
+            max-width: 75%;
+            width: 60%;
+        }
+
+        .product-logo-wrapper {
+            font-weight: 500;
+            line-height: 1.2;
+            text-align: center;
+            color: black;
+            text-decoration: none;
+        }
+
+        .product-specification {
+            font-size: 0.8rem;
+            font-weight: lighter;
+        }
+
+        .engon-list li {
+            margin: 1em 2em;
+            font-size: 16pt;
+            font-weight: bold;
+        }
+
+        .post-address {
+            text-align: center;
+        }
+
+        .links-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .link-teaser {
+            font-size: 16pt;
+            font-weight: bold;
+        }
+
+        .link-button {
+            display: inline-block;
+            border-radius: calc(var(--bq_border_radius) / 4);
+            color: #ffffff;
+            padding: 8px 0;
+            /*fixed width*/
+            width: 10em;
+            text-align: center;
+            font-size: 10pt;
+
+        }
+
+        .link-button-documentation {
+            background: linear-gradient(90deg, #8bd600 0%, #69a100 100%);
+        }
+
+        .link-button-youtube {
+            background: linear-gradient(90deg, #dd2627 0%, #be1e20 100%);
+        }
+
+        .link-button-discord {
+            background: linear-gradient(90deg, #8296d9 0%, #5d6bb4 100%);
+        }
+
+        .link-button-about {
+            background: linear-gradient(90deg, #01d3e0 0%, #224bf1 100%);
+        }
+
+        .link-divider {
+            height: 4px;
+            margin: 4px 0 1em 0;
+        }
+
+        .link-divider-documentation {
+            background: linear-gradient(90deg, #8bd600 0%, #ffffff 100%);
+        }
+
+        .link-divider-discord {
+            background: linear-gradient(90deg, #8296d9 0%, #ffffff 100%);
+        }
+
+        .link-divider-about {
+            background: linear-gradient(90deg, #01d3e0 0%, #ffffff 100%);
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- FOR PP, COPY FROM HERE-->
+
+    <article class="body">
+        <section>
+
+            <h2>Other <b> products</b></h2>
+
+            <div class="other-products">
+                <a class="selected-product other-product" href="https://blendermarket.com/products/botaniq-trees"> <img
+                        class="product-logo"
+                        src="https://d1231c29xbpffx.cloudfront.net/cache/45a9a907b1f4a777bde2b7e663a4bda7.png">
+                    <div class="product-logo-wrapper">
+                        <span class="product-name">botaniq</span><br> <span class="product-specification">tree
+                            library</span>
+                    </div>
+                </a>
+                <a class="other-product" href="https://blendermarket.com/products/materialiq"> <img class="product-logo"
+                        src="https://d1231c29xbpffx.cloudfront.net/cache/9c2eb15be74e0a3a9f7cdf2a4a7b4b03.svg">
+                    <div class="product-logo-wrapper">
+                        <span class="product-name">materialiq</span><br> <span class="product-specification">material
+                            library</span>
+                    </div>
+                </a>
+                <a class="other-product"
+                    href="https://blendermarket.com/products/car-library-traffiq-vehicles-for-blender"> <img
+                        class="product-logo"
+                        src="https://d1231c29xbpffx.cloudfront.net/cache/19b0f9006af9634cd596849be4a1358a.svg">
+                    <div class="product-logo-wrapper">
+                        <span class="product-name">traffiq</span><br> <span class="product-specification">vehicle
+                            library</span>
+                    </div>
+                </a>
+                <a class="other-product" href="https://blendermarket.com/products/aquatiq-water-library"> <img
+                        class="product-logo"
+                        src="https://d1231c29xbpffx.cloudfront.net/cache/6752b12e87ebf239eee3477c47a587a1.svg">
+                    <div class="product-logo-wrapper">
+                        <span class="product-name">aquatiq</span><br> <span class="product-specification">water
+                            library</span>
+                    </div>
+                </a>
+                <a class="other-product" href="https://blendermarket.com/products/render-manager-addon-renderset"> <img
+                        class="product-logo"
+                        src="https://d1231c29xbpffx.cloudfront.net/cache/75f3243239ae2348b2114186987f7520.svg">
+                    <div class="product-logo-wrapper">
+                        <span class="product-name">renderset</span><br> <span class="product-specification">render
+                            manager</span>
+                    </div>
+                </a>
+                <a class="other-product" href="https://blendermarket.com/products/memsaver-scene-memory-optimizer"> <img
+                        class="product-logo"
+                        src="https://d1231c29xbpffx.cloudfront.net/cache/af2c82e979fe5c679bf4ac2bca27c58a.svg">
+                    <div class="product-logo-wrapper">
+                        <span class="product-name">memsaver</span><br> <span class="product-specification">memory
+                            saver</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- INTRO PIC -->
+        <img class="intro_img" src="./images/forest.jpeg" alt="Forest created with botaniq assets">
+
+        <div class="bottom-left-intro-text"> Create <br> without <br> limitations </div>
+
+        <img src="./images/logo_botaniq_10opacity.png" alt="botaniq logo" class="bq_logo_backdrop">
+
+        <!-- WHY, BOTANIQ -->
+        <section>
+            <h1> <b> Why </b> botaniq? </h1>
+            <div class="why_intro"><span class="why_intro_pre">Our mission</span> is to make your creative process
+                as efficient as possible while keeping it fun.</div>
+
+            <div class="why">
+                <img class="why_image" src="./images/library.png" alt="Screenshot of the botaniq library">
+            </div>
+
+            <div class="why_row">
+                <div class="why why_column">
+                    <div class="why_block_content">
+                        <b>Long lasting</b> collection <br>
+                        of high quality assets <br>
+                        used by 20,000+ users
+                    </div>
+                    <img class="why_image" src="./images/monastery.png" alt="Monastery decorated with botaniq assets">
+                    <div class="black_gradient"></div>
+
+                </div>
+                <div class="why why_column">
+                    <div class="why_block_content">
+                        <b>Variable uses</b> in art, <br>
+                        environment design, <br>
+                        or game development.
+                    </div>
+                    <img class="why_image" src="./images/envrionment.gif" alt="Environment made of botaniq assets">
+                    <div class="black_gradient"></div>
+
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Get <b>moving</b></h2>
+            <div class="why">
+                <img class="why_image" src="./images/library.png" alt="Screenshot of the botaniq library">
+            </div>
+        </section>
+
+
+        <!-- BOTANIQ FEATURES -->
+        <section>
+            <h2> botaniq <b> features </b> </h2>
+            <div class="why_intro"><span class="why_intro_pre">Our products</span> are equipped with tools favored by
+                professionals and beginners alike.</div>
+
+            <div class="block_container">
+                <div class="block_content">
+                    <h3>Customize</h3>
+                    Adjust the tone <br />
+                    to fit any season <br />
+                    or style you want.
+                </div>
+                <div class="features_img">
+                    <img src="./images/customization.gif" alt="Customization demonstration">
+                </div>
+            </div>
+
+            <div class="block_container">
+                <div class="features_img">
+                    <img src="./images/animation.gif" alt="Animation demonstration">
+                </div>
+                <div class="block_content">
+                    <h3>Animate</h3>
+                    Add wind animation <br />
+                    to any model <br />
+                    with just one click.
+                </div>
+            </div>
+
+            <div class="block_container">
+                <div class="block_content">
+                    <h3>Randomize</h3>
+                    Transform any <br />
+                    asset into as many <br />
+                    variants as you need.
+                </div>
+                <div class="features_img">
+                    <img src="./images/randomization.gif" alt="Randomize demonstration">
+                </div>
+            </div>
+
+            <div class="block_container">
+                <div class="features_img">
+                    <img class="features_img" src="./images/scartter.gif" alt="Scatter demonstration">
+                </div>
+                <div class="block_content">
+                    <h3>Scatter</h3>
+                    Cover your ground <br />
+                    with multiple assets <br />
+                    effectively and fast.
+                </div>
+            </div>
+
+            <div class="block_container">
+                <div class="block_content">
+                    <h3>Snap to Ground</h3>
+                    Prevent your trees <br />
+                    and bushes <br />
+                    from flying far away. <br />
+                </div>
+                <div class="features_img">
+                    <img class="features_img" src="./images/snap.gif" alt="Snap To Ground demonstration">
+                </div>
+            </div>
+
+            <div class="block_container">
+                <div class="features_img">
+                    <img class="features_img features-img-left" src="./images/vines.gif" alt="Vines demonstration">
+                </div>
+                <div class="block_content">
+                    <h3>Draw Vines</h3>
+                    Draw custom vines <br />
+                    easily with bezier curves.
+                </div>
+            </div>
+
+            <div class="block_container">
+                <div class="block_content">
+                    <h3>Particle Systems</h3>
+                    Premade particle setups <br />
+                    ready to speed up your process.
+                </div>
+                <div class="features_img">
+                    <img class="features_img" src="./images/particles.gif" alt="Particle Systems demonstration">
+                </div>
+            </div>
+
+            <div class="block_container">
+                <div class="features_img">
+                    <img class="features_img features-img-left" src="./images/convert.gif"
+                        alt="Convert to Linked/Editable demonstration">
+                </div>
+                <div class="block_content">
+                    <h3>Linked/Editable</h3>
+                    Convert instanced assets <br />
+                    to editable <br />
+                    or revert back to instances.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2> What are <b> asset packs? </b> </h2>
+            <div class="why_intro"><span class="why_intro_pre">Asset packs</span> (.paq) are the shit, but the text that
+                describes them is in a .jpg and I don't want to type it out, but the text that
+                describes them is in a .jpg and I don't want to type it out, but the text that
+                describes them is in a .jpg and I don't want to type it out
+            </div>
+            <a href="https://blendermarket.com/products/engon">
+                <img class="image" src="./images/engon-teaser.gif" alt="Teaser for engon addon" width="100%">
+            </a>
+
+            <ul class="engon-list">
+                <li> .paq in engon pls </li>
+                <li> engon has cool shit</li>
+                <li> we spent like billion hours on this</li>
+                <li> it's easier to pirate (why are we putting this sentence on our PP?)</li>
+            </ul>
+
+            <div class="why_intro"><span class="why_intro_pre">Recieve FREE starter kits of all asset packs</span>, but
+                the text that
+                describes them is in a .jpg and I don't want to type it out, but the text that
+                describes them is in a .jpg and I don't want to type it out, but the text that
+                describes them is in a .jpg and I don't want to type it out
+            </div>
+        </section>
+
+        <section>
+
+            <h2> Lightning <b> performance </b> </h2>
+
+            <img class="image" src="./images/detail-optimnisation.jpeg"
+                alt="Demonstration of the high visual detail and optimization of a botaniq library asset">
+        </section>
+
+        <!-- SUMMARY -->
+        <section>
+            <h2> What's on the <b> menu? </b> </h2>
+
+            <!-- Coniferous category -->
+            <div class="block_container">
+                <div class="category_content">
+                    <h3>Coniferous</h3>
+                    <div class="list_container">
+                        <ul class="bq_list">
+                            <li>White Fir</li>
+                            <li>Himalayan Cedar</li>
+                            <li>Cedar</li>
+                            <li>Cypress</li>
+                            <li>Larch</li>
+                            <li>Japanese Larch</li>
+                            <li>Spruce</li>
+
+                        </ul>
+                        <ul class="bq_list">
+                            <li>Red Spruce</li>
+                            <li>Maritime Pine</li>
+                            <li>Pine</li>
+                            <li>Buddhist Pine</li>
+                            <li>Fir</li>
+                            <li>Umbrella Pine</li>
+                            <li>Yew</li>
+                        </ul>
+                    </div>
+                </div>
+                <img class="categories_img" src="./images/coniferous.gif" alt="Coniferous trees of the botaniq library">
+            </div>
+
+            <!-- Deciduous category -->
+
+            <div class="block_container">
+
+                <img class="categories_img" src="./images/deciduous.gif" alt="Deciduous trees of the botaniq library">
+                <div class="category_content">
+                    <h3> Deciduous </h3>
+                    <div class="list_container">
+
+                        <ul class="bq_list">
+                            <li> Maple</li>
+                            <li> Buckeye</li>
+                            <li> Chestnut</li>
+                            <li> Alder</li>
+                            <li> Birch</li>
+                            <li> Hackberry</li>
+                            <li> Lemon</li>
+                            <li> Beech</li>
+                            <li> Fig</li>
+                        </ul>
+                        <ul class="bq_list">
+                            <li> Ash</li>
+                            <li> Toyon</li>
+                            <li> Apple</li>
+                            <li> Aspen</li>
+                            <li> Cherry</li>
+                            <li> Oak</li>
+                            <li> Willow</li>
+                            <li> Black Locust</li>
+                            <li> Linden</li>
+                            <li> Elm</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coniferous category -->
+            <div class="block_container">
+                <div class="category_content">
+                    <h3> Plants </h3>
+                    <div class="list_container">
+                        <ul class="bq_list">
+                            <li> Areca Palm </li>
+                            <li> Basil </li>
+                            <li> Aspidistra (Cast Iron Plant) </li>
+                            <li> Coriander </li>
+                            <li> Dracaena </li>
+                            <li> Ficus (Rubber Tree) </li>
+                            <li> Hibisous </li>
+                            <li> Monstera </li>
+                            <li> Chlorophytum (Spider Plant) </li>
+                        </ul>
+                        <ul class="bq_list">
+                            <li> Red Hot Chilli Pepper </li>
+                            <li> Snake Plant </li>
+                            <li> Spathiphyllum (Peace Lily Plant) </li>
+                            <li> Tomato Red Robin </li>
+                            <li> Zamioculcas (ZZ Plant) </li>
+                            <li> Pothos (Devil's Ivy) </li>
+                            <li> Rosebush </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <img class="categories_img" src="./images/plants.gif" alt="Plants of the botaniq library">
+            </div>
+
+            <!-- Miscellaneous category -->
+
+            <div class="block_container">
+                <img class="categories_img" src="./images/misc.gif" alt="Miscellaneous assets of the botaniq library" />
+                <div class="category_content">
+                    <h3> Shrubs </h3>
+                    <ul class="bq_list">
+                        <li> Pinecones </li>
+                        <li> Branches </li>
+                        <li> Twigs </li>
+                        <li> Aplysina fistularis </li>
+                        <li> Lilypads </li>
+                        <li> Needles </li>
+                        <li> Mushroom Amanita </li>
+                        <li> Mushroom Boletus </li>
+                        <li> Mushroom Russala </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="why_intro">and many more <span class="why_intro_pre">categories</span>...</div>
+        </section>
+
+        <section class="links">
+            <div class="links-header">
+                <div class="link-teaser">Start Learning</div>
+                <div>
+                    <a href="#">
+                        <div class="link-button link-button-documentation">Documentation</div>
+                    </a>
+                    <a href="#">
+                        <div class="link-button link-button-youtube">YouTube</div>
+                    </a>
+
+                </div>
+            </div>
+            <div class="link-divider link-divider-documentation"></div>
+            <p>With the addon text in jpg text in jpg text in jpg text in jpg text in jpg text in jpg text in jpg text
+                in jpg text in jpg text in jpg text in jpg</p>
+            <div class="links-header">
+                <div class="link-teaser">Join the Community</div>
+                <a href="#">
+                    <div class="link-button link-button-discord">Discord</div>
+                </a>
+            </div>
+            <div class="link-divider link-divider-discord"></div>
+            <p>With the addon text in jpg text in jpg text in jpg text in jpg text in jpg text in jpg text in jpg text
+                in jpg text in jpg text in jpg text in jpg</p>
+
+            <div class="links-header">
+                <div class="link-teaser">Meet the Devs</div>
+                <a href="#">
+                    <div class="link-button link-button-about">About Us</div>
+                </a>
+            </div>
+            <div class="link-divider link-divider-about"></div>
+            <p>With the addon text in jpg text in jpg text in jpg text in jpg text in jpg text in jpg text in jpg text
+                in jpg text in jpg text in jpg text in jpg</p>
+
+
+
+        </section>
+
+
+        <section>
+
+            <h2>Personal <b> licenses </b></h2>
+            <div class="licenses">
+                <div class="license_column">
+                    <img class="above-license" src="./images/deciduous.gif">
+                    <div class="license_text">
+                        <div class="license_heading">botaniq</div>
+                        <div class="license_subheading">starter</div>
+                        <div class="license_count">~4% assets, all features</div>
+
+                        <table class="license_table">
+                            <tr>
+                                <td>assets</td>
+                                <td>31</td>
+                                <td>4.3%</td>
+                            </tr>
+                            <tr>
+                                <td>scatters</td>
+                                <td>8</td>
+                                <td>5.6%</td>
+                            </tr>
+                        </table>
+                        <div class="license_price">
+                            $2
+                        </div>
+                    </div>
+                </div>
+                <div class="license_column">
+                    <img class="above-license" src="./images/deciduous.gif">
+                    <div class="license_text">
+                        <div class="license_heading">botaniq</div>
+
+                        <div class="license_subheading">lite</div>
+                        <div class="license_count">~42% assets, all features</div>
+
+                        <table class="license_table">
+                            <tr>
+                                <td>assets</td>
+                                <td>304</td>
+                                <td>42%</td>
+                            </tr>
+                            <tr>
+                                <td>scatters</td>
+                                <td>34</td>
+                                <td>45%</td>
+                            </tr>
+                        </table>
+                        <div class="license_price">
+                            $49
+                        </div>
+                    </div>
+                </div>
+                <div class="license_column">
+                    <img class="above-license" src="./images/deciduous.gif">
+                    <div class="license_text">
+                        <div class="license_heading">botaniq</div>
+
+                        <div class="license_subheading">full</div>
+                        <div class="license_count">all assets, all features</div>
+
+                        <table class="license_table">
+                            <tr>
+                                <td>assets</td>
+                                <td>723</td>
+                                <td>100%</td>
+                            </tr>
+                            <tr>
+                                <td>scatters</td>
+                                <td>75</td>
+                                <td>100%</td>
+                            </tr>
+                        </table>
+                        <div class="license_price">
+                            $49
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Studio <b> licenses </b></h2>
+            <div class="licenses">
+
+                <div class="license_column">
+                    <img class="above-license" src="./images/deciduous.gif">
+                    <div class="license_text">
+                        <div class="license_heading">2-5 seats</div>
+                        <div class="license_subheading">studio</div>
+
+                        <ul class="license_studio_features">
+                            <li>
+                                all assets
+                            </li>
+                            <li>
+                                all features
+                            </li>
+                            <li>
+                                priority support
+                            </li>
+                            <li>
+                                impact on development
+                            </li>
+                        </ul>
+                        <div class="license_price">
+                            $249
+                        </div>
+                    </div>
+                </div>
+
+                <div class="license_column">
+                    <img class="above-license" src="./images/deciduous.gif">
+                    <div class="license_text">
+                        <div class="license_heading">6-10 seats</div>
+                        <div class="license_subheading">studio</div>
+
+                        <ul class="license_studio_features">
+                            <li>
+                                all assets
+                            </li>
+                            <li>
+                                all features
+                            </li>
+                            <li>
+                                priority support
+                            </li>
+                            <li>
+                                impact on development
+                            </li>
+                        </ul>
+                        <div class="license_price">
+                            $389
+                        </div>
+                    </div>
+                </div>
+                <div class="license_column">
+                    <img class="above-license" src="./images/deciduous.gif">
+                    <div class="license_text">
+                        <div class="license_heading">11+ seats</div>
+                        <div class="license_subheading">studio</div>
+
+                        <ul class="license_studio_features">
+                            <li>
+                                all assets
+                            </li>
+                            <li>
+                                all features
+                            </li>
+                            <li>
+                                priority support
+                            </li>
+                            <li>
+                                impact on development
+                            </li>
+                        </ul>
+                        <div class="license_price">
+                            contact us
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section>
+            <h2>Thank <b> you!</b></h2>
+            <div class="thank-you-text">
+                <p>Our addons have been our undisputed long text in jpg long text in jpg long text in jpg long text in
+                    jpg long text in jpg long text in jpg long text in jpg long text in jpg
+                </p>
+                <p>
+                    Polygoniq would not exist without long text in jpg long text in jpg
+                </p>
+                <p>
+                    Truly.
+                </p>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="post-address">
+                <div>www.polygoniq.com</div>
+                <div>Polská 22, Prague 2, 120 00 Czechia</div>
+            </div>
+        </section>
+
+
+
+    </article>
+
+</body>
+>
+</html>
